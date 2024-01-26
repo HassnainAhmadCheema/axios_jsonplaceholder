@@ -15,53 +15,6 @@
       <button @click="patchApi">Patch Request</button>
     </div>
 
-    <script>
-      new Vue({
-        el: "#app",
-        methods: {
-          getApi() {
-            axios
-              .get("https://jsonplaceholder.typicode.com/posts/1")
-              .then((response) => console.log(response))
-              .catch((error) => console.error("Error fetching data:", error));
-          },
-
-          postApi() {
-            axios
-              .post("https://jsonplaceholder.typicode.com/posts", {
-                userId: 1,
-                id: 1,
-                title: "I am title",
-                body: "I am body",
-              })
-              .then((response) => console.log(response))
-              .catch((error) => console.error("Error fetching data:", error));
-          },
-
-          putApi() {
-            axios
-              .put("https://jsonplaceholder.typicode.com/posts/1", {
-                userId: 1,
-                id: 1,
-                title: "I am title",
-                body: "I am body",
-              })
-              .then((response) => console.log(response))
-              .catch((error) => console.error("Error fetching data:", error));
-          },
-
-          patchApi() {
-            axios
-              .patch("https://jsonplaceholder.typicode.com/posts/1", {
-                userId: 1,
-                id: 1,
-                body: "I am body",
-              })
-              .then((response) => console.log(response))
-              .catch((error) => console.error("Error fetching data:", error));
-          },
-        },
-      });
-    </script>
+    <script src="./moment/moment.min.js"></script>
   </body>
 </html>
