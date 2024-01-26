@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Moment.js in Vue.js</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      <button @click="getApi">Get Request</button>
+      <button @click="postApi">Post Request</button>
+      <button @click="putApi">Put Request</button>
+      <button @click="patchApi">Patch Request</button>
+    </div>
+
+    <script>
+      new Vue({
+        el: "#app",
+        methods: {
+          getApi() {
+            axios
+              .get("https://jsonplaceholder.typicode.com/posts/1")
+              .then((response) => console.log(response))
+              .catch((error) => console.error("Error fetching data:", error));
+          },
+
+          postApi() {
+            axios
+              .post("https://jsonplaceholder.typicode.com/posts", {
+                userId: 1,
+                id: 1,
+                title: "I am title",
+                body: "I am body",
+              })
+              .then((response) => console.log(response))
+              .catch((error) => console.error("Error fetching data:", error));
+          },
+
+          putApi() {
+            axios
+              .put("https://jsonplaceholder.typicode.com/posts/1", {
+                userId: 1,
+                id: 1,
+                title: "I am title",
+                body: "I am body",
+              })
+              .then((response) => console.log(response))
+              .catch((error) => console.error("Error fetching data:", error));
+          },
+
+          patchApi() {
+            axios
+              .patch("https://jsonplaceholder.typicode.com/posts/1", {
+                userId: 1,
+                id: 1,
+                body: "I am body",
+              })
+              .then((response) => console.log(response))
+              .catch((error) => console.error("Error fetching data:", error));
+          },
+        },
+      });
+    </script>
+  </body>
+</html>
